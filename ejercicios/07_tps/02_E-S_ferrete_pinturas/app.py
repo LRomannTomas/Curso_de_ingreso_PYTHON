@@ -44,10 +44,21 @@ class App(customtkinter.CTk):
         self.btn_convertir_f_c.grid(row=4, pady=10, columnspan=2, sticky="nsew")
     
     def btn_convertir_c_f_on_click(self):
-        pass
+        temp_c = self.txt_temperatura_c.get()
+        temp_f = self.txt_temperatura_f.get()
+        temp_c = float(temp_c)
+        temp_f = float(temp_f)
+        pasaje = (temp_c * (9/5)) + 32
+        alert("Pasaje de C a F" , f"({temp_c} × 9/5) + 32 = {pasaje} °F")
+        
 
     def btn_convertir_f_c_on_click(self):
-        pass
+        temp_c = self.txt_temperatura_c.get()
+        temp_f = self.txt_temperatura_f.get()
+        temp_c = float(temp_c)
+        temp_f = float(temp_f)
+        pasaje = (temp_f - 32) * (5/9)
+        alert("Pasaje de F a C",f"({temp_f} − 32) × 5/9 = {pasaje} °C")
     
     
 if __name__ == "__main__":

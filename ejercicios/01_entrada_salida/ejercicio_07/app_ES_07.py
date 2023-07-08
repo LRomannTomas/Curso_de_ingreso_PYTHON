@@ -50,17 +50,38 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        pass
-
+        numero_1 = self.txt_operador_a.get()
+        numero_1 = int(numero_1)
+        numero_2 = self.txt_operador_b.get()
+        numero_2 = int(numero_2)
+        suma = numero_1 + numero_2
+       
+        alert("suma" , f"La suma es: {suma}")
+    
     def btn_restar_on_click(self):
-        pass
+        numero_1 = self.txt_operador_a.get()
+        numero_1 = int(numero_1)
+        numero_2 = self.txt_operador_b.get()
+        numero_2 = int(numero_2) 
+        resta = numero_1 - numero_2
+        alert("resta" , f"La resta es: {resta}")
 
     def btn_multiplicar_on_click(self):
-        pass
+        numero_1 = self.txt_operador_a.get()
+        numero_1 = int(numero_1)
+        numero_2 = self.txt_operador_b.get()
+        numero_2 = int(numero_2)
+        multiplicacion = numero_1 * numero_2
+        alert("multiplicacion", f"La multiplicacion es: {multiplicacion}")
 
     def btn_dividir_on_click(self):
-        pass
-        
+        numero_1 = self.txt_operador_a.get()
+        numero_1 = float(numero_1)
+        numero_2 = self.txt_operador_b.get()
+        numero_2 = float(numero_2)
+        division = numero_1 / numero_2
+        alert("division" , f"La division es: {division}")
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -18,8 +18,8 @@ a la hora de realizar un alambrado permetral, se le solicita al usuario que ingr
 
     EJ 36 MTS X 24 MTS 
     (G)Poste Quebracho Grueso de 2.4 mts
-    (V)Poste Quebracho Fino de 2.2 mts
-    (F)Varillas
+    (F)Poste Quebracho Fino de 2.2 mts
+    (V)Varillas
     
     G V V V V V F V V V V V F V V V V V G
     V                                   V
@@ -63,7 +63,24 @@ class App(customtkinter.CTk):
         self.btn_calcular.grid(row=3, pady=10, columnspan=2, sticky="nsew")
 
     def btn_calcular_on_click(self):
-        pass
+        largo = self.txt_largo.get()
+        ancho = self.txt_ancho.get()
+        largo = float(largo)
+        ancho = float(ancho)
+        mts_cuadrados = largo * ancho
+        mts_lineales = (largo * 2) + (ancho * 2) 
+        poste_quebracho_ancho = 2.4
+        cant_postes_anchos = (mts_lineales // (250 + poste_quebracho_ancho))
+        poste_quebracho_fino = 2.2
+        cant_postes_finos = (mts_lineales // (12 + poste_quebracho_fino))
+        cant_varillas = mts_lineales // 2
+        cant_alambre = mts_lineales * 7
+
+
+        alert("respuesta" , f"A)La cantidad de metros cuadrados es: {mts_cuadrados:.0f} y la cantidad de metros lineales es: {mts_lineales:.0f} \nB)cantidad de postes anchos: {4 + cant_postes_anchos:.0f} \nC)Cantidad de postes finos: {cant_postes_finos:.0f} \nD)Cantidad de varillas {cant_varillas:.0f} \nE)La cantidad de alambre necesaria es: {cant_alambre:.0f} " )
+
+
+
 
 
 if __name__ == "__main__":

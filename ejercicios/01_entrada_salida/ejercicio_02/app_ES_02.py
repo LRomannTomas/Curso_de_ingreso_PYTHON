@@ -28,8 +28,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
+        dato = prompt("Titulo" , "Ingresa un dato: ")
+        alert("Titulo" , f"Tu dato es {dato}")
         
     
 if __name__ == "__main__":
