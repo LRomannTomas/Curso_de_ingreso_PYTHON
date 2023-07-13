@@ -75,12 +75,6 @@ class App(customtkinter.CTk):
     
 
         
-            
-
-
-           
-        
-    
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -32,7 +32,8 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        pass 
+
 
     
 if __name__ == "__main__":
