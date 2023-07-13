@@ -47,13 +47,12 @@ class App(customtkinter.CTk):
         self.txt_promedio.delete(0,100)
         self.txt_promedio.insert(0,promedio)
 '''
-        lista = []
+        
         contador = 0
         suma = 0
         while contador < 5:
             numero = int(prompt("Numeros" ,"Ingrese un número: "))
             suma += numero
-            lista.append(numero)
             contador += 1
 
         promedio = suma / 5

@@ -24,10 +24,10 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        numeros = 0
-        while numeros < 10:
-            numeros += 1
-            alert("Ascensor",f"Estas en el piso {numeros}")
+        contador = 0
+        while contador < 10:
+            contador += 1
+            alert("Ascensor",f"Estas en el piso {contador}")
     
     
 if __name__ == "__main__":
