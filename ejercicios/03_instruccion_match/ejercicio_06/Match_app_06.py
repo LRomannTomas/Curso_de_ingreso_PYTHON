@@ -41,7 +41,7 @@ class App(customtkinter.CTk):
                     alert("Mensaje","Es de mañana")
                 elif hora >= 12 and hora <= 19:
                     alert("Mensaje","Es de tarde")
-                elif (hora >= 20 and hora <= 24) or (hora >= 0 and hora <= 6):
+                elif hora <= 24 or (hora >= 0 and hora <= 6):
                     alert("Mensaje","Es de noche")
                 else:
                     alert("Mensaje","La hora no existe")
