@@ -54,8 +54,8 @@ class App(customtkinter.CTk):
             numero = int(prompt("Numeros" ,"Ingrese un número: "))
             suma += numero
             contador += 1
-
-        promedio = suma / 5
+        print(contador)
+        promedio = suma / contador
 
         self.txt_suma_acumulada.delete(0,100)
         self.txt_suma_acumulada.insert(0,suma)
