@@ -50,7 +50,7 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-    
+        
         apellido = prompt("UTN","Ingrese el apellido: ")
 
         edad = int(prompt("UTN","Ingrese la edad: "))
@@ -62,9 +62,9 @@ class App(customtkinter.CTk):
             estado = prompt("UTN","Ingrese un estado que sea valido: ")
         
         num_legajo = prompt("UTN","Ingrese el numero de legajo: ")
-        while (len(num_legajo)) != 4:
-            num_legajo = prompt("UTN","Ingrese el numero de legajo (4 cifras): ")
-
+       
+        while  (num_legajo[0]) == "0" or (len(num_legajo)) != 4:
+            num_legajo = prompt("UTN","Ingrese el numero de legajo (4 cifras sin 0 a la izquierda): ")
         
         self.txt_apellido.delete(0,100)
         self.txt_apellido.insert(0,apellido)
