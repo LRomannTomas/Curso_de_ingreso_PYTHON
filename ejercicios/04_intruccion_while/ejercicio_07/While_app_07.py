@@ -33,18 +33,18 @@ class App(customtkinter.CTk):
 
     def btn_comenzar_ingreso_on_click(self):
 
-        
         acumulador = 0
         contador = 0
         bandera = True
         while bandera == True:
             numero = prompt("Mensaje","Escribi un numero:")
-            while numero.isdigit() == False:
-                numero = prompt("Mensaje","Escribi un numero:")
 
             if numero == None:
                 break
-        
+
+            while numero == None or numero.isdigit() == False:
+                numero = prompt("Mensaje","Escribi un numero (no letras):")
+                
             numero = int(numero)
             acumulador += numero
             contador += 1
@@ -54,11 +54,7 @@ class App(customtkinter.CTk):
         self.txt_suma_acumulada.insert(0,acumulador)
         self.txt_promedio.delete(0,100)
         self.txt_promedio.insert(0,promedio)
-
-
         
-
-    
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

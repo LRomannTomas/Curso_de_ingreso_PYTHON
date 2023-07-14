@@ -52,15 +52,13 @@ class App(customtkinter.CTk):
     def btn_validar_on_click(self):
         
         apellido = prompt("UTN","Ingrese el apellido: ")
-        while apellido.isdigit() == True:
-            apellido = prompt("UTN","Ingrese el apellido: ")
-            
+
         edad = int(prompt("UTN","Ingrese la edad: "))
         while edad < 18 or edad > 90:
             edad = int(prompt("UTN","Ingrese la edad (entre 18 y 90): "))
 
         estado = prompt("UTN","Ingrese el estado: ")
-        while estado != "Soltero/a" and estado != "Casado/a" and estado != "Divorciado/a" and estado != "Viudo/a":
+        while estado != "Soltero/a" and estado != "Casado/a" and estado != "Divorciado/a" and estado != "Viudo/a" and estado != "Hola":
             estado = prompt("UTN","Ingrese un estado que sea valido: ")
         
         num_legajo = int(prompt("UTN","Ingrese el numero de legajo: "))
