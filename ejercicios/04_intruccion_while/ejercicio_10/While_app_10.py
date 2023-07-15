@@ -33,7 +33,30 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        cantidad_positivos = 0
+        cantidad_negativos = 0
+        cantidad_ceros = 0
+        diferencia = 0
+        while True:
+            numero = prompt("UTN","Ingrese un numero: ")
+            if numero == None:
+                break
+            
+            if numero > 0:
+                cantidad_positivos += 1
+            if numero < 0:
+                cantidad_negativos += 1
+            else:
+                cantidad_ceros += 1
+        
+        if cantidad_positivos > cantidad_negativos:
+            diferencia = cantidad_positivos - cantidad_negativos
+        if cantidad_negativos < cantidad_positivos:
+            diferencia = cantidad_negativos - cantidad_positivos
+        contador = 0
+        alert(f"")
+            
+            
 
     
 if __name__ == "__main__":

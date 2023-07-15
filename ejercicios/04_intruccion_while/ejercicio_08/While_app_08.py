@@ -37,13 +37,12 @@ class App(customtkinter.CTk):
         acumulador_negativo = 0
         bandera = True
         while bandera == True:
-            numero = prompt("UTN","Ingrese un numero: ")
+            numero = int(prompt("UTN","Ingrese un numero: "))
 
-            if numero == None:
+            if numero == None or numero == 0:
                 break
 
-            numero = int(numero)
-
+           
             while numero > 0:
                 acumulador_positivo += numero
                 break
