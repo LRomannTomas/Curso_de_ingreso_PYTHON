@@ -52,6 +52,8 @@ class App(customtkinter.CTk):
     def btn_validar_on_click(self):
         
         apellido = prompt("UTN","Ingrese el apellido: ")
+        while apellido == None or apellido == "" or apellido.isalpha() == False or len(apellido) < 3:
+            apellido = prompt("UTN","Ingrese el apellido: ")
 
         edad = int(prompt("UTN","Ingrese la edad: "))
         while edad < 18 or edad > 90:
