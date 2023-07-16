@@ -51,8 +51,9 @@ class App(customtkinter.CTk):
             votos = int(prompt("UTN","Cantidad de votos recibidos: "))
             while votos < 0:
                 votos = int(prompt("UTN","Cantidad de votos recibidos (Ingrese un valor valido): "))
-            
+
             acumulador_votos += votos
+
             while True:
                 if x_mas_votado == None or votos > x_mas_votado:
                     x_mas_votado = votos
@@ -78,12 +79,6 @@ class App(customtkinter.CTk):
             
 
             
-
-
-
-    
-
-
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

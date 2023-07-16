@@ -23,7 +23,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass    
+        lista = [5,4,3,2,1]
+        for num in lista:
+            alert("Descendiendo" , num)
        
             
 

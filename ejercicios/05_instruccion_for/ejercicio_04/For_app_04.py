@@ -21,7 +21,22 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        valores = prompt("UTN","Ingrese un valor: ")
+        bandera = True
+        while bandera == True:
+            for valor in valores:
+                if valor == "9":
+                    bandera = False
+                    break
+            else:
+                valores = prompt("UTN","Ingrese un valor: ")
+
+            
+                
+        
+              
+            
+            
         
     
 if __name__ == "__main__":

@@ -22,8 +22,19 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        limite = int(prompt("UTN","Hasta que numero queres recorrer? "))
+        lista_num_pares = []
+        contador = 0
+        for num in range(1,limite + 1):
+            if num % 2 == 0:
+                lista_num_pares.append(num)
+                contador += 1
         
+        alert("UTN",f"""
+              Los numeros pares encontrados son: {lista_num_pares}
+              La cantidad de numeros pares es: {contador}""")
+            
+
     
 if __name__ == "__main__":
     app = App()
