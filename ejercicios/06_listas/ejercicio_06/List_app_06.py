@@ -24,7 +24,14 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        acumulador = 0
+        contador = 0
+        for num in self.lista_datos:
+            acumulador += num
+            contador += 1
+        promedio = acumulador / contador
+        alert("UTN",f"El promedio de la lista es: {promedio}")
+
     
 if __name__ == "__main__":
     app = App()

@@ -26,11 +26,20 @@ class App(customtkinter.CTk):
         self.lista_datos = []
 
 
-    def btn_mostrar_on_click(self):
-        pass
-        
     def btn_cargar_on_click(self):
-        pass
+        contador = 0
+        
+        while contador < 3:
+            numero = int(prompt("UTN","Ingrese un numero: "))
+            contador += 1
+            self.lista_datos.append(numero)
+    
+    
+    def btn_mostrar_on_click(self):
+        for num in self.lista_datos:
+            alert("UTN",num)
+        self.lista_datos.clear()
+        
     
 if __name__ == "__main__":
     app = App()

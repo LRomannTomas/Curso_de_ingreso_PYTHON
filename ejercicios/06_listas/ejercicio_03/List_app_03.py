@@ -24,7 +24,13 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        num_max = None
+        for max in self.lista_datos:
+            if num_max == None or max > num_max:
+                num_max = max
+
+        alert("UTN",f"El numero max es: {num_max}")
+
     
 if __name__ == "__main__":
     app = App()

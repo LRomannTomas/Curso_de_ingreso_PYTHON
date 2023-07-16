@@ -24,7 +24,11 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        num_min = None
+        for min in self.lista_datos:
+            if num_min == None or min < num_min:
+                num_min = min
+        alert("UTN",f"El numero min es: {num_min}")
     
     
 if __name__ == "__main__":
