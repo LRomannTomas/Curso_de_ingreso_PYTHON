@@ -23,15 +23,15 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         numero = int(prompt("UTN","Ingrese un numero: "))
-        lista_divisores = []
+        numeros_divisores = ""
         contador = 0
         for num in range(1,numero + 1):
             if numero % num == 0:
-                lista_divisores.append(num)
+                numeros_divisores += f"{num} "
                 contador += 1
 
         alert("UTN",f"""
-              Los numeros divisores encontrados son: {lista_divisores}
+              Los numeros divisores encontrados son: {numeros_divisores}
               La cantidad de numeros divisores es: {contador} """)
         
     

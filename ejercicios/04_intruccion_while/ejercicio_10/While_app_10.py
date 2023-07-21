@@ -54,11 +54,10 @@ class App(customtkinter.CTk):
             else:
                 cantidad_ceros += 1
         
-        if cantidad_positivos > cantidad_negativos:
-            diferencia = cantidad_positivos - cantidad_negativos
-        if cantidad_negativos > cantidad_positivos:
-            diferencia = cantidad_negativos - cantidad_positivos
-
+        diferencia = cantidad_positivos - cantidad_negativos
+        if diferencia < 0:
+            diferencia * (-1)
+        
         alert("UTN",f"""
             La suma de los numeros positivos es {suma_positivos}
             La suma de los numeros negativos es {suma_negativos}

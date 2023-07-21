@@ -23,8 +23,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        lista = [5,4,3,2,1]
-        for num in lista:
+    
+        for num in range(5,0,-1):
             alert("Descendiendo" , num)
        
             

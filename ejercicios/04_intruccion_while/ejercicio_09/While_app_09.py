@@ -38,21 +38,34 @@ class App(customtkinter.CTk):
     def btn_comenzar_ingreso_on_click(self):
         maximo = None
         minimo = None
+        #bandera = True
         while True:
             numero = prompt("UTN","Ingrese un numero: ")
             if numero == None:
                 break
+            else:
+                numero = int(numero)
 
             if maximo == None or numero > maximo :
                 maximo = numero
-                
-            if minimo == None or numero < minimo:
-                minimo = numero
+            else:
+                if minimo == None or numero < minimo:
+                    minimo = numero
+
+            # if numero > maximo or bandera == True:
+            #     maximo = numero
+            # if numero < minimo or bandera == True:  -->   -->   -->   forma optima de hacer lo mismo pero aplicable a cualquier lenguaje                                                                        
+            #     minimo = numero                                   (Es necesario cambiar los valores de maximo y minimo a 0 para que funcione)
+            #     bandera = False
                 
         self.txt_minimo.delete(0,100)
         self.txt_minimo.insert(0,minimo)
         self.txt_maximo.delete(0,100)
         self.txt_maximo.insert(0,maximo)
+
+        
+
+        
 
 
 

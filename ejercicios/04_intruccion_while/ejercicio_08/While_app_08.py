@@ -35,28 +35,26 @@ class App(customtkinter.CTk):
         
         acumulador_positivo = 0
         acumulador_negativo = 0
-        bandera = True
-        while bandera == True:
-            numero = int(prompt("UTN","Ingrese un numero: "))
 
-            if numero == None or numero == 0:
+        while True:
+            numero = prompt("UTN","Ingrese un numero: ")
+
+            if numero == None or numero == "0":
                 break
-
+            
+            numero = int(numero)
            
-            while numero > 0:
+            if numero > 0:
                 acumulador_positivo += numero
-                break
-
-            while numero < 0:
+            else:
                 if acumulador_negativo == 0:
-                    acumulador_negativo += numero
+                        acumulador_negativo = numero
                 else:
                     acumulador_negativo = numero * acumulador_negativo
-                break
+                    
+               
             
             
-            
-       
         self.txt_suma_acumulada.delete(0,100)
         self.txt_suma_acumulada.insert(0,acumulador_positivo)
         self.txt_producto.delete(0,100)

@@ -29,7 +29,8 @@ class App(customtkinter.CTk):
                     bandera = False
                     break
             else:
-                valores = prompt("UTN","Ingrese un valor: ")
+                valores = prompt("UTN","Ingrese otro valor: ")
+        
 
             
                 

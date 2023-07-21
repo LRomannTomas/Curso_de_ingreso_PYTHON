@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
         cantidad = int(self.txt_repetir.get())
         
         for x in range(cantidad):
-            print("Hola UTN FRA")
+           alert("mensaje","Hola UTN FRA")
 
             
         
