@@ -67,7 +67,7 @@ class App(customtkinter.CTk):
         
        
 
-        while contador < 4:
+        while contador < 10:
             
 
             nombre = prompt("UTN","Ingrese el nombre: ")
@@ -141,7 +141,7 @@ class App(customtkinter.CTk):
                     edades_tecno_jr = edad
                     nombre_menor_jr = nombre
             
-
+        
         promedio_edades_m = 0
         promedio_edades_f = 0
         promedio_edades_nb = 0

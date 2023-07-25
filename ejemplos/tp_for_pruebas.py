@@ -175,7 +175,7 @@ class App(customtkinter.CTk):
         porcentaje_f = cant_gen_f * 100 / contador
         porcentaje_nb = cant_gen_nb * 100 / contador
     
-
+        
 
         
         print(f"""

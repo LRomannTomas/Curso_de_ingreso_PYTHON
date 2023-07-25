@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
         self.btn_restart.grid(row=5, pady=20, columnspan=2, sticky="nsew")
         
         self.cpu_elije()
-        print(self.seleccion_cpu)
+        print(self.cpu_elije)
         
         self.contador_vitorias_cpu = 0 
         self.contador_vitorias_player_1 = 0 
@@ -52,10 +52,19 @@ class App(customtkinter.CTk):
         self.btn_papel.configure(state="normal")
         self.btn_tijera.configure(state="normal")
         self.cpu_elije()
-        print(self.seleccion_cpu)
+        print(self.cpu_elije)
 
     def cpu_elije(self):
-        pass
+        numero_random = random.randint(1,3)
+        piedra = 0
+        papel = 0
+        tijera = 0
+        if numero_random == 1:
+            piedra += 1
+        elif numero_random == 2:
+            papel += 1
+        else:
+            tijera += 1
 
     def btn_piedra_on_click(self):
         self.deshabilitar_botones()

@@ -46,22 +46,28 @@ class App(customtkinter.CTk):
         
         while bandera == True:
             nombre_votante = prompt("UTN","Ingrese el nombre del votante")
-            lista_nombre_votante.append(nombre_votante)
+            
 
             edad_votante = int(prompt("UTN","Ingrese la dedad del votante"))
             while edad_votante < 13:
-                edad_votante = int(prompt("UTN","Ingrese la dedad del votante"))
-            lista_edades.append(edad_votante)
+                edad_votante = int(prompt("UTN","Ingrese la edad del votante"))
+            
 
             genero_votante = prompt("UTN","Ingrese el genero del votante")
             while genero_votante != "Masculino" and genero_votante != "Femenino" and genero_votante != "Otro":
                 genero_votante = prompt("UTN","Ingrese el genero del votante")
-            lista_generos.append(genero_votante)
+            
                 
             nombre_participante = prompt("UTN","A quien quiere otorgar su voto?")
             while nombre_participante != "Giovanni" and nombre_participante != "Gianni" and nombre_participante != "Facundo":
                 nombre_participante = prompt("UTN","A quien quiere otorgar su voto?")
+            
+
+            lista_nombre_votante.append(nombre_votante)
+            lista_edades.append(edad_votante)
+            lista_generos.append(genero_votante)
             lista_nombre_participante.append(nombre_participante)
+
 
             respuesta = question("UTN","Desea continuar votando?")
             if respuesta == False:
@@ -100,30 +106,30 @@ class App(customtkinter.CTk):
             promedio_edad_femenino = acumulador_edad_femenino / contador_femenino
 
         
-        suma_votos = votos_giovanni + votos_facundo + votos_gianni
-        porcentaje_votos_gianni = votos_gianni * 100 / suma_votos
-        porcentaje_votos_facundo = votos_facundo * 100 / suma_votos
-        porcentaje_votos_giovanni = votos_giovanni * 100 / suma_votos
+        
+        porcentaje_votos_gianni = votos_gianni * 100 / len(lista_nombre_participante)
+        porcentaje_votos_facundo = votos_facundo * 100 / len(lista_nombre_participante)
+        porcentaje_votos_giovanni = votos_giovanni * 100 / len(lista_nombre_participante)
         
         mas_votado = None
         if votos_gianni > votos_facundo and votos_gianni > votos_giovanni:
             mas_votado = "Gianni"
         else:
-            if votos_facundo > votos_gianni and votos_facundo > votos_giovanni:
+            if votos_facundo > votos_giovanni:
                 mas_votado = "Facundo"
             else:
                 mas_votado = "Giovanni"
         
+        
         alert("UTN",f"""
-        El promedio de las edades de las votantes de genero 
-        femenino es: {promedio_edad_femenino}
+        El promedio de las edades de las votantes de genero femenino es: {promedio_edad_femenino}
         La cantidad de personas de genero masculino entre 
         25 y 40 años que votaron a Giovanni o a Facundo es: {contador_punto_b}
         El nombre del votante mas joven que voto 
         a gianni es: {nombre_menor_edad_voto_gianni}
-        El participante Gianni recibio un {porcentaje_votos_gianni}% de los votos)
-        El participante Facundo recibio un {porcentaje_votos_facundo}% de los votos)
-        El participante Giovanni recibio un {porcentaje_votos_giovanni}% de los votos
+        El participante Gianni recibio un {porcentaje_votos_gianni:.2f}% de los votos
+        El participante Facundo recibio un {porcentaje_votos_facundo:.2f}% de los votos
+        El participante Giovanni recibio un {porcentaje_votos_giovanni:.2f}% de los votos
         El participante que debe dejar la casa es: {mas_votado}""")
               
 

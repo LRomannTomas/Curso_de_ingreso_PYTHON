@@ -59,18 +59,60 @@ class App(customtkinter.CTk):
         self.btn_multiplicar.configure(state="disabled")
 
     def btn_sumar_on_click(self):
-        pass
+        
+
+        primer_numero = self.txt_operador_a.get()
+        segundo_numero = self.txt_operador_b.get()
+        respuesta = self.txt_respuesta.get()
+        if primer_numero.isdigit == False or segundo_numero.isdigit() == False or respuesta.isdigit() == False:
+            alert("Advertencia","Debes rellenar todos los campos con numeros para jugar!")
+        else:
+            primer_numero = int(self.txt_operador_a.get())
+            segundo_numero = int(self.txt_operador_b.get())
+            respuesta = int(self.txt_respuesta.get())
+            suma = primer_numero + segundo_numero
+
+            if respuesta != suma:
+                alert("Mensaje",f"La respuesta es incorrecta, el resultado es: {suma}")
+            else:
+                alert("Mensaje",f"La respuesta es correcta")
 
     def btn_restar_on_click(self):
-        pass
+        primer_numero = self.txt_operador_a.get()
+        segundo_numero = self.txt_operador_b.get()
+        respuesta = self.txt_respuesta.get()
+        if primer_numero.isdigit == False or segundo_numero.isdigit() == False or respuesta.isdigit() == False:
+            alert("Advertencia","Debes rellenar todos los campos con numeros para jugar!")
+        else:
+            primer_numero = int(self.txt_operador_a.get())
+            segundo_numero = int(self.txt_operador_b.get())
+            respuesta = int(self.txt_respuesta.get())
+            resta = primer_numero - segundo_numero
+            if respuesta != resta:
+                alert("Mensaje",f"La respuesta es incorrecta, el resultado es: {resta}")
+            else:
+                alert("Mensaje",f"La respuesta es correcta")
         
     def btn_multiplicar_on_click(self):
-        pass
+        primer_numero = self.txt_operador_a.get()
+        segundo_numero = self.txt_operador_b.get()
+        respuesta = self.txt_respuesta.get()
+        if primer_numero.isdigit == False or segundo_numero.isdigit() == False or respuesta.isdigit() == False:
+            alert("Advertencia","Debes rellenar todos los campos con numeros para jugar!")
+        else:
+            primer_numero = int(self.txt_operador_a.get())
+            segundo_numero = int(self.txt_operador_b.get())
+            respuesta = int(self.txt_respuesta.get())
+            multiplicacion = primer_numero * segundo_numero
+            if respuesta != multiplicacion:
+                alert("Mensaje",f"La respuesta es incorrecta, el resultado es: {multiplicacion}")
+            else:
+                alert("Mensaje",f"La respuesta es correcta")
         
     def btn_jugar_on_click(self):
         self.deshabilitar_botones()
-        pass
-
+        
+        
 
 if __name__ == "__main__":
     app = App()

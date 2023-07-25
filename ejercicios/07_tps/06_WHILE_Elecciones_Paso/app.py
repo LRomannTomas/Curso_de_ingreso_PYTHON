@@ -44,9 +44,10 @@ class App(customtkinter.CTk):
         while bandera == True:
             
             nombre = prompt("UTN","Ingrese su nombre: ")
-            while nombre == None or nombre == "" or nombre.isalpha() == False or len(nombre) < 3:
+            while nombre == None  or nombre.isalpha() == False or len(nombre) < 3:
                 nombre = prompt("UTN","Ingrese un nombre valido: ")
             
+
             edad = int(prompt("UTN","Ingrese la edad: "))
             while edad < 25:
                 edad = int(prompt("UTN","Ingrese la edad (mayor a 25): "))
@@ -62,17 +63,14 @@ class App(customtkinter.CTk):
             acumulador_votos += votos
 
 
-            
             if x_mas_votado == None or votos > x_mas_votado:
                 x_mas_votado = votos
                 nombre_mas_votado = nombre
             if x_menos_votado == None or votos < x_menos_votado:
                 x_menos_votado = votos
-
                 nombre_menos_votado = nombre
                 
 
-            
             salida = question("Pregunta","Desea continuar?")
             if salida == False:
                 break

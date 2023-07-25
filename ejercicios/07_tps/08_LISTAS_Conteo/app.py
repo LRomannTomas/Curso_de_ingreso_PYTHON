@@ -43,47 +43,39 @@ class App(customtkinter.CTk):
 
         self.lista = []
 
-    def btn_comenzar_ingreso_on_click(self):
-        
-        acumulador_negativos = 0
-        contador_negativos = 0
-        acumulador_positivos = 0
-        contador_positivos = 0
-        contador_ceros = 0
-        lista_negativos = []
-        lista_positivos = []
-        
+    def btn_comenzar_ingreso_on_click(self):    
+        self.lista.clear()
         while True:
             numero = prompt("UTN","Ingrese un numero:")
             if numero == None:
                 break
             numero = int(numero)
-            
+            self.lista.append(numero)
 
-            if numero < 0:
-                acumulador_negativos += numero
-                contador_negativos += 1
-                lista_negativos.append(numero)
+    
+    def btn_mostrar_estadisticas_on_click(self):
+        acumulador_negativos = 0
+        contador_negativos = 0
+        acumulador_positivos = 0
+        contador_positivos = 0
+        contador_ceros = 0
+        minimo_negativo = None
+        maximo_positivo = None
+        for i in range(len(self.lista)):
+            if self.lista[i] < 0:
+                    acumulador_negativos += self.lista[i]
+                    contador_negativos += 1
+                    if minimo_negativo == None or self.lista[i] < minimo_negativo:
+                        minimo_negativo = self.lista[i]
             else:
-                if numero > 0:
-                    acumulador_positivos += numero
+                if self.lista[i] > 0:
+                    acumulador_positivos += self.lista[i]
                     contador_positivos += 1
-                    lista_positivos.append(numero)
+                    if maximo_positivo == None or self.lista[i] > maximo_positivo:
+                        maximo_positivo = self.lista[i]
                 else:
                     contador_ceros += 1 
-   
 
-        minimo_negativo = None
-        for min in range(len(lista_negativos)):
-            if minimo_negativo == None or lista_negativos[min] < minimo_negativo:
-                minimo_negativo = lista_negativos[min]
-        
-        
-        maximo_positivo = None
-        for max in range(len(lista_positivos)):
-            if maximo_positivo == None or lista_positivos[max] > maximo_positivo:
-                maximo_positivo = lista_positivos[max]
-        
         promedio_negativos = 0
         if contador_negativos != 0:
             promedio_negativos = acumulador_negativos / contador_negativos
@@ -96,16 +88,7 @@ class App(customtkinter.CTk):
               La cantidad de ceros es: {contador_ceros}
               El menor numero negativo ingresado es: {minimo_negativo}
               El mayor numero positivo ingresado es: {maximo_positivo}
-              El promedio de los numeros negativos es: {promedio_negativos}""")
-        
-
-        
-
-            
-            
-
-    def btn_mostrar_estadisticas_on_click(self):
-        pass
+              El promedio de los numeros negativos es: {promedio_negativos:.2f}""")
 
 
 if __name__ == "__main__":

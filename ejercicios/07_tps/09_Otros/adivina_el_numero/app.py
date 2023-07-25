@@ -36,8 +36,29 @@ class App(customtkinter.CTk):
         self.numero_intento = 0
 
 
+
     def btn_mostrar_on_click(self):
-        pass
+        numero_ingresado = self.txt_numero.get()
+        if numero_ingresado.isdigit() == True:
+            numero_ingresado = int(numero_ingresado)
+            self.numero_intento += 1
+            
+
+        if type(numero_ingresado) == int:
+            if numero_ingresado < self.numero_secreto:
+                alert("Advertencia","Falta...")
+            else:
+                if numero_ingresado > self.numero_secreto:
+                    alert("Advertencia","Se paso...")
+                else:
+                    alert("Felicitaciones!",f"Ganaste en {self.numero_intento} intentos")
+        else:
+            alert("Advertencia","Debe ingresear un numero entero para seguir jugando!")
+
+
+        
+        
+
 
 
 if __name__ == "__main__":
