@@ -71,6 +71,7 @@ class App(customtkinter.CTk):
             while edad < 18:
                 edad = int(prompt("UTN","Ingrese la edad (Debe ser mayor a 17 años): "))
 
+
             genero = prompt("UTN","Ingrese el genero: (M, F o NB ")
             while genero != "M" and genero != "F" and genero != "NB":
                 genero = prompt("UTN","Ingrese el genero: M, F o NB ")

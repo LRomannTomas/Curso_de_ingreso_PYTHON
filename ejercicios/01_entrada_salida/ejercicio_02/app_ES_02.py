@@ -28,8 +28,26 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        dato = prompt("Titulo" , "Ingresa un dato: ")
-        alert("Titulo" , f"Tu dato es {dato}")
+        # numero = 10
+        # cant_divisores = 0
+        
+        # for i in range(1,numero + 1):
+        #     if numero % i == 0:
+        #         cant_divisores += 1
+        # if cant_divisores == 2:
+        #     print("Es primo")
+        # else:
+        #     print("No es primo")
+
+        cadena = "hola"
+        cant_cadena = len(cadena)
+        for i in cadena:
+            print(cadena[cant_cadena - 1])
+            
+
+
+            
+    
         
     
 if __name__ == "__main__":
